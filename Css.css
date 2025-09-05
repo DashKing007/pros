@@ -1,0 +1,343 @@
+/* Basic Resets & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f4f4f4; /* Light text */
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Header & Navigation */
+.main-header {
+    background: #000000; /* Even darker header */
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 3px solid #007bff;
+}
+
+.main-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.business-name {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.search-bar {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 10px; /* For mobile spacing */
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    border-radius: 5px 0 0 5px;
+    background-color: #333;
+    color: #f4f4f4;
+    outline: none;
+    font-size: 0.9em;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 0 5px 5px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.content-section {
+    margin-bottom: 60px;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.content-section h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.material-cards-placeholder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.placeholder-card {
+    background-color: #3a3a3a;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #bbb;
+    border: 1px dashed #555;
+}
+
+
+/* Location & Hours */
+.location-hours {
+    background-color: #000000;
+    padding: 50px 0;
+    border-top: 3px solid #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+.location-hours .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.google-map, .opening-hours {
+    flex: 1;
+    min-width: 300px;
+}
+
+.google-map h2, .opening-hours h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.google-map iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.opening-hours ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.opening-hours li {
+    background-color: #2a2a2a;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.main-footer {
+    background: #000000;
+    color: #cccccc;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.main-footer .footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-footer .footer-links a,
+.main-footer .footer-links span {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-links a:hover {
+    color: #ffffff;
+}
+
+.main-footer p {
+    font-size: 0.9em;
+    color: #888888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .business-name {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 70%;
+    }
+
+    .location-hours .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-name {
+        font-size: 1.8em;
+    }
+
+    .main-header, .main-footer, .content-section, .location-hours {
+        padding: 20px 0;
+    }
+
+    .container {
+        padding: 10px 0;
+    }
+
+    .search-input {
+        padding: 6px 10px;
+    }
+
+    .search-button {
+        padding: 6px 10px;
+    }
+}
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
